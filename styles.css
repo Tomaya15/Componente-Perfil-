@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    background-color: rgb(52, 129, 148);
+}
+
+html::after,
+html::before{
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    width: 1000px;
+    height: 1000px;
+    background-color: hsl(185, 75%, 39%) ; 
+    background-size: 100% 100%; 
+    z-index: -1;
+}
+
+html::before{
+    top: -500px;
+    left: -500px;
+}
+html::after{
+    bottom: -500px;
+    right: -500px;
+}
+
+body{
+    min-height: 100vh; /*Ocupa toda la pantalla del body*/
+    /* overflow: hidden; Todo lo que se desborde no lo muestra */
+    display: flex   ;
+    justify-content:  center;
+    align-items: center;
+    margin: 0;
+    font-family: sans-serif;
+    overflow: hidden;
+
+    /* 
+    otra forma de alinear al medio el body
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    */
+}
+
+.card{
+    width: 300px;
+    height: 350px;
+    background-color: whitesmoke ;
+    border-radius: 15px;
+    /* TODO LO QUE SE SALGA DE LA TARJETA SE OCULTA */
+    overflow: hidden;
+}
+
+.card_header{
+    background-image: url(assets/images/bg-pattern-card.svg);
+    height: 120px;
+    position: relative;
+    padding-top: 96px;
+    background-repeat: no-repeat;
+    background-size: 100% 144px;
+}
+
+.card_image{
+    position: absolute;
+    /*Para bajar la imagen*/
+    bottom: 0   ;
+    /* para centrar la imagen */
+    left: 50%;
+    transform: translate(-50%, 50%);
+    /*bordes*/
+    border-radius: 50% ;
+    border: 2px solid whitesmoke;
+    background-color: whitesmoke;
+}
+.card_body{
+    display: flex;
+    /*  */
+    flex-direction: column;
+    /* Tamaño */
+    height: 135px; 
+    /* Posicion */
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    /*  */
+    /* background-color: red; */
+}
+.card_text{
+    margin: 0;
+    line-height: 1.5;
+}
+.card_text--light{
+    color: grey;
+    font-weight: normal;
+}
+.card_footer{
+    display: flex;  
+    justify-content: space-between;
+    border-top: 1px solid grey;
+}
+.card_stats{
+    width: 100%;
+    text-align: center;
+}
+.card_number{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    line-height: 1.8;
+}
